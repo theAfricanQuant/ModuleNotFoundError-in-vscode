@@ -55,9 +55,14 @@ def multiply_numbers(*args):
 
 In `folder1/main.py`:
 ```python
+# import sys
+# import os
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from pathlib import Path
 import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+sys.path.append(str(Path(__file__).parent.parent))
 
 from folder2.calculator import sum_numbers, multiply_numbers
 
